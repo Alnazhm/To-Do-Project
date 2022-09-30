@@ -1,42 +1,110 @@
 [
 {
   "model": "todo.todo",
-  "pk": 3,
+  "pk": 14,
   "fields": {
-    "description": "Second",
-    "status": "New",
-    "lead_at": "2022-09-21",
-    "detail_description": "homework 52"
-  }
-},
-{
-  "model": "todo.todo",
-  "pk": 4,
-  "fields": {
-    "description": "First",
-    "status": "New",
-    "lead_at": "2022-09-22",
-    "detail_description": "todo exercises"
-  }
-},
-{
-  "model": "todo.todo",
-  "pk": 5,
-  "fields": {
-    "description": "Third",
-    "status": "Completed",
-    "lead_at": "2022-09-12",
-    "detail_description": "planning future"
-  }
-},
-{
-  "model": "todo.todo",
-  "pk": 9,
-  "fields": {
-    "description": "sss",
-    "status": "In Progress",
+    "description": "Task1",
+    "status": "Новая",
     "lead_at": "2022-09-13",
-    "detail_description": "something"
+    "detail_description": "something",
+    "is_deleted": true,
+    "deleted_at": "2022-09-30T04:39:13.878Z"
+  }
+},
+{
+  "model": "todo.todo",
+  "pk": 15,
+  "fields": {
+    "description": "task3",
+    "status": "New",
+    "lead_at": "2022-10-05",
+    "detail_description": "something about task3",
+    "is_deleted": true,
+    "deleted_at": "2022-09-30T09:19:59.123Z"
+  }
+},
+{
+  "model": "todo.todo",
+  "pk": 16,
+  "fields": {
+    "description": "task4",
+    "status": "In Progress",
+    "lead_at": "2022-10-06",
+    "detail_description": "somethings task4",
+    "is_deleted": false,
+    "deleted_at": null
+  }
+},
+{
+  "model": "todo.todo",
+  "pk": 17,
+  "fields": {
+    "description": "task2",
+    "status": "In Progress",
+    "lead_at": "2022-10-01",
+    "detail_description": "tobe done to",
+    "is_deleted": false,
+    "deleted_at": null
+  }
+},
+{
+  "model": "todo.todo",
+  "pk": 18,
+  "fields": {
+    "description": "task5",
+    "status": "New",
+    "lead_at": "2022-10-02",
+    "detail_description": "dfdfsfssfsfsfs",
+    "is_deleted": false,
+    "deleted_at": null
+  }
+},
+{
+  "model": "todo.todo",
+  "pk": 19,
+  "fields": {
+    "description": "task6",
+    "status": "New",
+    "lead_at": "2022-10-04",
+    "detail_description": "task6 somethings to do",
+    "is_deleted": false,
+    "deleted_at": null
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$yadjUSs66Epoqz0PZyoFqO$TECYQDxfuMiI6VAZq9HGXtPW6pxXl4rIsnAsc/nR4Ug=",
+    "last_login": "2022-09-19T19:11:16.193Z",
+    "is_superuser": true,
+    "username": "root",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-09-18T17:45:47.499Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$Rn3XD1rCpLkfhwbwZQ95bZ$wMU49ha16zqUN7iKLn/+aGURIncoBXOZA3CwLztPSzc=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-09-30T09:42:16.458Z",
+    "groups": [],
+    "user_permissions": []
   }
 }
 ]
