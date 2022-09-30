@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block title %}
 Confirm Delete
 {% endblock %}
@@ -7,9 +6,10 @@ Confirm Delete
 <h1>Are you sure delete this task?</h1>
 <p> Description {{ todo_task.description }}</p>
 <p> Description {{ todo_task.status }}</p>
-<form action="{% url 'confirm_delete' todo_task.pk %}" method="post">
+<form action="{% url 'confirm_delete' todo_task.pk  %}" method="POST">
 {% csrf_token %}
     <input type="submit" value="Yes">
     <a href="{% url 'index' %}">No</a>
 </form>
+
 {% endblock %}

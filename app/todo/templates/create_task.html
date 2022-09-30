@@ -1,39 +1,16 @@
 {% extends 'base.html'%}
 {% block content %}
-<h1>New Task</h1>
-<form action="{% url 'task_add' %}" method="POST">
-    {% csrf_token %}
-    <div class="form-group row">
-    <label for="description" class="col-sm-2 col-form-label">Description</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" name="description" id="description">
+    <div class="container">
+        <div class="box">
+            <div class="head_text heading text-center">
+                <p class="main-title-home"> Create a new Task</p>
+            </div>
+           <form action="{% url 'task_add' %}" method="POST">
+               {% csrf_token%}
+               <div class="form">
+                    {% include 'partials/task_form.html' with button_text='Create task' %}
+               </div>
+           </form>
+        </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="status" name="status" class="col-sm-2 col-form-label">Status</label>
-    <div class="col-sm-10">
-        <select name="status">
-            {% for todo in status_list %}
-            <option value="{{todo.0}}">{{todo.1}}</option>
-            {% endfor %}
-        </select>
-    </div>
-  </div>
-    <div class="form-group row">
-    <label for="lead_at" name="lead_at" class="col-sm-2 col-form-label">Lead At</label>
-    <div class="col-sm-10">
-      <input type="date" class="form-control" name="lead_at" id="lead_at">
-    </div>
-  </div>
-    <br>
-     <div class="form-group row">
-    <label for="detail_description" class="col-sm-2 col-form-label">Detail description</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" name="detail_description" id="detail_description">
-    </div>
-  </div>
-    <div class="form_row">
-        <input type="submit" value="Create Task">
-    </div>
-</form>
-{% endblock%}
+{% endblock %}
