@@ -1,13 +1,13 @@
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render, redirect, get_object_or_404
-from todo.models import Todo, STATUS_OF_TASK
+from todo.models import Todo, StatusChoices
 
 
 def add_view(request, *args, **kwargs):
     if request.method == 'GET':
         context = {
-            'status_list': STATUS_OF_TASK
+            'status_list': StatusChoices.choices
         }
         return render(request, 'create_task.html', context=context)
 
@@ -27,14 +27,13 @@ def detail_view(request, pk):
 
 def delete_task_view(request, pk):
     todo_task = get_object_or_404(Todo, pk=pk)
-    todo_task.delete()
-    return render(request, 'task_delete.html', context={'todo_task': todo_task})
+    return render(request, 'delete_confirm_page.html', context={'todo_task': todo_task})
 
 def edit_task_view(request, pk):
     todo_task = get_object_or_404(Todo, pk=pk)
     if request.method == "GET":
         context = {
-            'status_list': STATUS_OF_TASK,
+            'status_list': StatusChoices.choices,
             'todo_task': todo_task
         }
         return render(request, 'task_edit.html', context=context)
@@ -46,6 +45,10 @@ def edit_task_view(request, pk):
         todo_task.save()
         return redirect('task_detail', pk=pk)
 
+def confirm_delete_task_view(request,pk):
+    todo_task = get_object_or_404(Todo, pk=pk)
+    todo_task.delete()
+    return redirect('index')
 
 
 

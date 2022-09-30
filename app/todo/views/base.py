@@ -5,7 +5,7 @@ from todo.models import Todo
 
 
 def index_view(request: WSGIRequest):
-    todo_tasks = Todo.objects.all()
+    todo_tasks = Todo.objects.filter(is_deleted=False)
     context = {
         'todo_tasks': todo_tasks
     }
